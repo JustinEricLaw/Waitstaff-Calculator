@@ -12,19 +12,31 @@ html {
 
 h3 {
   font-family: $font-stack-main;
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 p, 
 li {
   font-family: $font-stack-main;
-  color: #444;
+  color: #555;
   font-size: 1.1em;
-  line-height: 1.5;
+  line-height: 1.7;
   font-style: normal;
 }
 
+span {
+  border-bottom: 1px solid #777;
+  padding-bottom: .05em;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
 
-
+input {
+  color: #999;
+  font-size: 1em;
+}
 
 
 

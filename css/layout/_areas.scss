@@ -31,7 +31,7 @@ header {
 }
 
 .smiley {
-  max-width: 4em;
+  max-width: 6em;
   padding-bottom: .75em;
 }
 
@@ -47,12 +47,37 @@ h3 {
 input {
   width: 100%;
   margin-bottom: 1.25em;
-  height: 2em;
+  height: 2.25em;
   border: 1px solid #999;
+  padding: .5em;
+  @include bp(lg) {
+    width: 100%;
+  }
 }
 
 p {
   margin-bottom: 1.5em;
+}
+
+li {
+  width: 100%;
+  list-style-type: none;
+  @include bp(lg) {
+    width: 33.3%;
+    float: left;
+    padding-right: 1em;
+  }
+}
+
+li:nth-child(3n + 3) {
+  @include bp(lg) {
+    padding-right: 0;
+  }
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.15s 0.15s ease; 
+  opacity: 0;
 }
 
 

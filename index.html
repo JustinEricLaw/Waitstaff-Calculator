@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Crimson+Text:700italic,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
     
     <!-- Main CSS Stylesheet -->  
     <link rel="stylesheet" href="css/style.css" />
@@ -29,23 +29,25 @@
         </div>  
       </header>
 
-      <section class="words-container">
+      <section class="words-container group">
         <h3>Provide the Following Words:</h3>
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+          <ul>
+            <li><input ng-init="person='Male Celebrity'" ng-model="person" type="text"></li>
+            <li><input ng-init="noun='Noun'" ng-model="noun" type="text"></li>
+            <li><input ng-init="objects='Objects'" ng-model="objects" type="text"></li>
+            <li><input ng-init="adjective='Adjective'" ng-model="adjective" type="text"></li>
+            <li><input ng-init="noun2='Noun 2'" ng-model="noun2" type="text"></li>
+            <li><input ng-init="beverage='Type of Beverage'" ng-model="beverage" type="text"></li>
+            <li><input ng-init="name='Name'" ng-model="name" type="text"></li>
+            <li><input ng-init="place='Place'" ng-model="place" type="text"></li>
+            <li><input ng-init="liquid='Type of Liquid'" ng-model="liquid" type="text"></li>
+          </ul>
       </section> 
 
       <section class="output-container">
-        <p>Well {{person}} settled down in the Valley and hung his wild years on a nail that he drove through his wife's {{noun}}. He sold used {{food}} out there on San Fernando Road and assumed a $30,000 loan at 15 and 1/4%. He put a down payment on a little {{number}} bedroom place. His wife was a {{adjective}} type of {{noun 2}}, made good {{beverage}}, kept her mouth shut most of the time. Had a little Chihuahua named {{name}} that had some kind of skin disease and was totally blind. They had a thoroughly modern kitchen, self-cleaning oven, the whole bit. {{person}} drove a little sedan. They were so happy.</p>
+        <p>Well <span>{{person}}</span> settled down in the Valley and hung his wild years on a nail that he drove through his wife's <span>{{noun}}</span>. He sold used <span>{{objects}}</span> out there on San Fernando Road and assumed a $30,000 loan at 15 and 1/4%. He put a down payment on a little 2 bedroom place. His wife was a <span>{{adjective}}</span> type of <span>{{noun2}}</span>, made a good <span>{{beverage}}</span>, kept her mouth shut most of the time. Had a little Chihuahua named <span>{{name}}</span> that had some kind of skin disease and was totally blind. They had a thoroughly modern kitchen, self-cleaning oven, the whole bit. <span>{{person}}</span> drove a little sedan. They were so happy.</p>
 
-        <p>One night {{person}} was on his way home from work, stopped at the {{place}}, picked up a couple of {{beverage}}. Drank 'em in the car on his way to the Shell station. He got a gallon of {{liquid}} in a can. Drove home, doused everything in the house, torched it. Parked across the street, laughing, watching it burn. All Halloween orange and chimney red. Then {{person}} put on {{musician}}, got on the Hollywood Freeway headed north. Never could stand that dog.</p>
+        <p>One night <span>{{person}}</span> was on his way home from work, stopped at the <span>{{place}}</span>, picked up a couple of <span>{{beverage}}</span>. Drank 'em in the car on his way to the Shell station. He got a gallon of <span>{{liquid}}</span> in a can. Drove home, doused everything in the house, torched it. Parked across the street, laughing, watching it burn. All Halloween orange and chimney red. Then <span>{{person}}</span> put on the top 40 station, got on the Hollywood Freeway headed north. Never could stand that dog.</p>
       </section>
     </div>
   </body>
