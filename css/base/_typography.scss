@@ -1,0 +1,40 @@
+/* ******************************************
+	Typography
+****************************************** */ 
+html {
+  font-size: 100%;
+  line-height: 1;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h3 {
+  font-family: $font-stack-main;
+}
+
+p, 
+li {
+  font-family: $font-stack-main;
+  color: #444;
+  font-size: 1.1em;
+  line-height: 1.5;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+::-moz-selection {
+  background: $secondary-color;
+  color: #fff;
+}
+::selection {
+  background: $secondary-color;
+  color: #fff;
+}
+

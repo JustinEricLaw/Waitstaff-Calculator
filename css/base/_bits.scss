@@ -1,0 +1,41 @@
+/**************************************************
+VARIABLES: Colors
+**************************************************/
+$primary-color: #d34749;
+$secondary-color: #ccc;
+
+
+/**************************************************
+VARIABLES: Fonts
+**************************************************/
+$font-stack-display: 'Abril Fatface', serif;
+$font-stack-main: 'Open Sans', sans-serif;
+
+
+/**************************************************
+VARIABLES: Breakpoints
+**************************************************/
+$break-sm: 23.125em; // 370px
+$break-md: 32.5em; // 520px
+$break-lg: 40.625em; // 650px
+$break-xlg: 112.5em; // 1800px
+
+
+/**************************************************
+MIXINS: Breakpoints
+**************************************************/
+@mixin bp($point) {
+  @if $point == sm {
+    @media screen and (min-width: $break-sm) { @content; }
+  }
+  @if $point == md {
+    @media screen and (min-width: $break-md) { @content; }
+  }
+  @if $point == lg {
+    @media screen and (min-width: $break-lg) { @content; }
+  }
+  @if $point == xlg {
+    @media screen and (min-width: $break-xlg) { @content; }
+  }
+}
+

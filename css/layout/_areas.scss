@@ -1,0 +1,58 @@
+/* ******************************************
+Layout
+****************************************** */
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img { 
+  max-width: 100%;
+}
+
+body {
+  background-color: $primary-color;
+  padding: .75em;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: #fff;
+  max-width: 50em;
+}
+
+header {
+  padding: 1.25em;
+  div {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.smiley {
+  max-width: 4em;
+  padding-bottom: .75em;
+}
+
+.words-container, .output-container {
+  padding: 3em 1.5em;
+  border-top: 1px solid #ccc;
+}
+
+h3 {
+  padding-bottom: 1em;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 1.25em;
+  height: 2em;
+  border: 1px solid #999;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+
