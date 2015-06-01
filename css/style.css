@@ -501,14 +501,14 @@ header {
 h3 {
   padding-bottom: 1em; }
 
-input {
+.words-select input {
   width: 100%;
   margin-bottom: 1.25em;
   height: 2.25em;
   border: 1px solid #999;
   padding: .5em; }
   @media screen and (min-width: 40.625em) {
-    input {
+    .words-select input {
       width: 100%; } }
 
 p {
@@ -530,3 +530,9 @@ li {
 [placeholder]:focus::-webkit-input-placeholder {
   transition: opacity 0.15s 0.15s ease;
   opacity: 0; }
+
+.gender-container {
+  margin-top: 2em; }
+
+.gender-form label {
+  padding-right: 1.5em; }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="" lang="en">
+<html ng-app="myApp" lang="en">
   <head>
     <meta charset="UTF-8">
     <title>ng Mad Libs</title>
@@ -15,11 +15,12 @@
 
     <!-- Angular JS --> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="myApp.js"></script>
   </head>
 
 
   <body>
-    <div class="container">
+    <div ng-controller="myController" class="container">
       <header>
         <div class="smiley">
           <img alt="smiley face" src="img/mad-lib-happy-face.png">
@@ -29,25 +30,39 @@
         </div>  
       </header>
 
-      <section class="words-container group">
+      <section class="words-container">
         <h3>Provide the Following Words:</h3>
-          <ul>
-            <li><input placeholder="Male Celebrity" ng-model="person" type="text"></li>
+          <ul class="words-select group">
+            <li><input placeholder="Celebrity" ng-model="celebrity" type="text"></li>
             <li><input placeholder="Noun" ng-model="noun" type="text"></li>
             <li><input placeholder="Objects" ng-model="objects" type="text"></li>
             <li><input placeholder="Adjective" ng-model="adjective" type="text"></li>
             <li><input placeholder="Noun 2" ng-model="noun2" type="text"></li>
             <li><input placeholder="Type of Beverage" ng-model="beverage" type="text"></li>
-            <li><input placeholder="Name" ng-model="name" type="text"></li>
+            <li><input placeholder="Name" ng-model="dogname" type="text"></li>
             <li><input placeholder="Place" ng-model="place" type="text"></li>
             <li><input placeholder="Type of Liquid" ng-model="liquid" type="text"></li>
           </ul>
+
+          <div class="gender-container">
+            <h3>Select the Gender of your Celebrity:</h3>
+            <form class="gender-form" name="genderForm" >
+              <label>
+                <input type="radio" ng-model="gender.type" ng-click="gender.her_his='her'; gender.she_he='she'; gender.her_him='her'" value="female">
+                Female
+              </label>
+              <label>
+                <input type="radio" ng-model="gender.type" ng-click="gender.her_his='his'; gender.she_he='he'; gender.her_him='him'" value="male">
+                Male
+              </label>
+            </form> 
+          </div> 
       </section> 
 
       <section class="output-container">
-        <p>Well <span>{{person}}</span> settled down in the Valley and hung his wild years on a nail that he drove through his wife's <span>{{noun}}</span>. He sold used <span>{{objects}}</span> out there on San Fernando Road and assumed a $30,000 loan at 15 and 1/4%. He put a down payment on a little 2 bedroom place. His wife was a <span>{{adjective}}</span> type of <span>{{noun2}}</span>, made a good <span>{{beverage}}</span>, kept her mouth shut most of the time. Had a little Chihuahua named <span>{{name}}</span> that had some kind of skin disease and was totally blind. They had a thoroughly modern kitchen, self-cleaning oven, the whole bit. <span>{{person}}</span> drove a little sedan. They were so happy.</p>
+        <p>Well <span>{{celebrity}}</span> settled down in the Valley and hung {{gender.her_his}} wild years on a nail that {{gender.she_he}} drove through {{gender.her_his}} <span>{{noun}}</span>. <span>{{celebrity}}</span> sold used <span>{{objects}}</span> out there on San Fernando Road and assumed a $30,000 loan at 15 and 1/4% and put a down payment on a little 2 bedroom place. The wife was a <span>{{adjective}}</span> type of <span>{{noun2}}</span>, made a good <span>{{beverage}}</span>, had a little Chihuahua named <span>{{dogname}}</span> that had some kind of skin disease and was totally blind. They had a thoroughly modern kitchen, self-cleaning oven, the whole bit. <span>{{celebrity}}</span> drove a little sedan. They were so happy.</p>
 
-        <p>One night <span>{{person}}</span> was on his way home from work, stopped at the <span>{{place}}</span>, picked up a couple of <span>{{beverage}}</span>. Drank 'em in the car on his way to the Shell station. He got a gallon of <span>{{liquid}}</span> in a can. Drove home, doused everything in the house, torched it. Parked across the street, laughing, watching it burn. All Halloween orange and chimney red. Then <span>{{person}}</span> put on the top 40 station, got on the Hollywood Freeway headed north. Never could stand that dog.</p>
+        <p>One night <span>{{celebrity}}</span> was on {{gender.her_his}} way home from work, stopped at the <span>{{place}}</span>, picked up a couple of <span>{{beverage}}</span>. Drank 'em in the car on {{gender.her_his}} way to the Shell station. Then {{gender.she_he}} got a gallon of <span>{{liquid}}</span> in a can, drove home, doused everything in the house, torched it. Parked across the street, laughing, watching it burn. All Halloween orange and chimney red. Then <span>{{celebrity}}</span> put on the top 40 station, got on the Hollywood Freeway headed north. Never could stand that dog.</p>
       </section>
     </div>
   </body>
