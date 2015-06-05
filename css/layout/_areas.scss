@@ -41,12 +41,11 @@ header {
 }
 
 h3 {
-  padding-bottom: 1em;
+  padding-bottom: .75em;
 }
 
 .words-select input {
   width: 100%;
-  margin-bottom: 1.25em;
   height: 2.25em;
   border: 1px solid #999;
   padding: .5em;
@@ -62,10 +61,12 @@ p {
 li {
   width: 100%;
   list-style-type: none;
+  margin-bottom: 1.1em;
   @include bp(lg) {
     width: 33.3%;
     float: left;
     padding-right: 1em;
+    height: 3em;
   }
 }
 
@@ -82,7 +83,7 @@ li:nth-child(3n + 3) {
 
 
 .gender-container {
-  margin-top: 2em;
+  margin: 1.5em 0;
 }
 
 .gender-form{
@@ -91,10 +92,26 @@ li:nth-child(3n + 3) {
   }
 }
 
+.submit-container {
+  padding: 1em 0 2.5em;
+  input {
+    float: right;
+    border: none;
+    padding: .75em;
+    background-color: $primary-color;
+    color: white;
+    text-transform: uppercase;
+    font-family: $font-stack-main;
+    font-weight: bold;
+  }
+}
 
-
-
-
+.error {
+  border-bottom: none;
+  background-color: rgba(255, 192, 203, 0.5);
+  color: $primary-color;
+  padding: .15em .35em;
+}
 
 
 
