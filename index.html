@@ -2,109 +2,122 @@
 <html lang="en" ng-app="myApp" ng-controller="myController">
   <head>
     <meta charset="UTF-8">
-    <title>ng Mad Libs</title>
+    <title>Waitstaff Calculator</title>
 
-    <!-- Viewport meta tag -->
+    <!-- Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
+
     
     <!-- Main CSS Stylesheet -->  
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Angular JS --> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="js/angular-messages.min.js"></script>
+    
+    <!-- Scripts --> 
     <script src="js/myApp.js"></script>
   </head>
 
 
-  <body>
+  <body class="teal">    
     <div class="container">
-      <header>
-        <div class="smiley">
-          <img alt="smiley face" src="img/mad-lib-happy-face.png">
-        </div>
-        <div class="logo"> 
-          <img alt="ng Mad Libs logo" src="img/ng-mad-libs-logo.png">
-        </div>  
+      <header class="center-align"> 
+        <h1 class="white-text">Waitstaff Calculator</h1>
       </header>
 
-      <section class="words-container">
-        <form name="myForm" novalidate ng-submit="submit()">
-          <h3>Provide the Following Words:</h3>
-          <ul class="words-select group">
-            <li>
-              <input placeholder="Celebrity" name="celebrity" ng-model="celebrity" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.celebrity.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Noun" name="noun" ng-model="noun" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.noun.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Objects" name="objects" ng-model="objects" type="text" required>
-                <div ng-if="myForm.$submitted" ng-messages="myForm.objects.$error">
-                  <span class="error" ng-message="required">Field is Required!</span>
+
+      <div class="row">
+      
+        <!-- Meal Details -->
+        <section class="col s12 l6">
+          <div class="card panel-container white">
+            <div class="indigo panel-header">
+              <h6>Enter the Meal Details</h6>
+            </div>
+            <div class="panel panel-primary">
+              <form>
+                <div>
+                  <label for="price">Base Meal Price: $</label>
+                  <input type="number">
                 </div>
-            </li>
-            <li>
-              <input placeholder="Adjective" name="adjective" ng-model="adjective" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.adjective.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Noun 2" name="noun2" ng-model="noun2" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.noun2.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Type of Beverage" name="beverage" ng-model="beverage" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.beverage.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Name" name="dogname" ng-model="dogname" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.dogname.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Place" name="place" ng-model="place" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.place.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-            <li>
-              <input placeholder="Type of Liquid" name="liquid" ng-model="liquid" type="text" required>
-              <div ng-if="myForm.$submitted" ng-messages="myForm.liquid.$error">
-                <span class="error" ng-message="required">Field is Required!</span>
-              </div>
-            </li>
-          </ul>
-
-          <div class="submit-container">
-            <input type="submit" value="Generate Your Mad Lib"/>
+                <div>
+                  <label for="tax">Tax Rate: %</label>
+                  <input type="number">
+                </div>
+                <div>
+                  <label for="tip">Tip Percentage: %</label>
+                  <input type="number">
+                </div>
+                <div class="button-container right-align">
+                  <a class="btn indigo" type="submit">Submit</a>
+                  <a class="btn blue" type="reset">Cancel</a>
+                </div>
+              </form>
+            </div>
           </div>
-        </form>
+        </section> 
 
 
-      </section> 
+        <!-- Customer Charges -->
+        <section class="col s12 l6">
+          <div class="card panel-container white">
+            <div class="indigo panel-header">
+              <h6>Customer Charges</h6>
+            </div>
+            <div class="panel">
+              <div>
+                <label for="subtotal">Subtotal:</label>
+                <input type="number">
+              </div>
+              <div>
+                <label for="tip">Tip:</label>
+                <input type="number">
+              </div>
+              <div>
+                <label for="total">Total:</label>
+                <input type="number">
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <section class="output-container">
-        <p>Well <span>{{celebrity}}</span> settled down in the Valley and hung his wild years on a nail that he drove through his wife's <span>{{noun}}</span>. <span>{{celebrity}}</span> sold used <span>{{objects}}</span> out there on San Fernando Road and assumed a $30,000 loan at 15 and 1/4% and put a down payment on a little 2 bedroom place. The wife was a <span>{{adjective}}</span> type of <span>{{noun2}}</span>, made a good <span>{{beverage}}</span>, had a little Chihuahua named <span>{{dogname}}</span> that had some kind of skin disease and was totally blind. They had a thoroughly modern kitchen, self-cleaning oven, the whole bit. <span>{{celebrity}}</span> drove a little sedan. They were so happy.</p>
 
-        <p>One night <span>{{celebrity}}</span> was on his way home from work, stopped at the <span>{{place}}</span>, picked up a couple of <span>{{beverage}}</span>. Drank 'em in the car on his way to the Shell station. Then he got a gallon of <span>{{liquid}}</span> in a can, drove home, doused everything in the house, torched it. Parked across the street, laughing, watching it burn. All Halloween orange and chimney red. Then <span>{{celebrity}}</span> put on the top 40 station, got on the Hollywood Freeway headed north. Never could stand that dog.</p>
-      </section>
-    </div>
+        <!-- Earnings -->
+        <section class="col s12 l6">
+          <div class="card panel-container white">
+            <div class="indigo panel-header">
+              <h6>Earnings Info</h6>
+            </div>
+            <div class="panel">
+              <div>
+                <label for="tip-total">Tip Total:</label>
+                <input type="number">
+              </div>
+              <div>
+                <label for="meal-count">Meal Count:</label>
+                <input type="number">
+              </div>
+              <div>
+                <label for="avg-tip">Average Tip:</label>
+                <input type="number">
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset -->
+          <div class="right-align">
+            <a class="btn-large blue" type="reset">Reset</a>
+          </div>
+
+        </section>
+
+
+
+      
+      </div> <!-- Close Row -->
+    </div> <!-- Close Container -->
   </body>
-
 </html>
+

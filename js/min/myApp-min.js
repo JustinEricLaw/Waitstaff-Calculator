@@ -1,1 +1,0 @@
-angular.module("myApp",["ngMessages"]).controller("myController",function(o){o.celebrity="",o.noun="",o.objects="",o.adjective="",o.noun2="",o.beverage="",o.dogname="",o.place="",o.liquid="",o.submit=function(){o.myForm.$valid?console.log("The form is valid"):console.log("The form is invalid")}});

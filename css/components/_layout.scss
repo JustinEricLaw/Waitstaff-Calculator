@@ -1,0 +1,24 @@
+.panel-header {
+  padding: 1em;
+}
+.panel {
+  padding: 1em 1em 0;
+}
+.panel-container {
+  margin-bottom: 2em;
+}
+.panel-primary {
+  @media only screen and (min-width: $medium-screen-up) {
+    height: 25em;
+    position: relative;
+  }
+}
+.button-container {
+  padding: 1.5em 0; 
+  @media only screen and (min-width: $medium-screen-up) {
+    position: absolute;
+    bottom: 1em;
+    right: 1em; 
+    padding: 0;
+  }
+}
