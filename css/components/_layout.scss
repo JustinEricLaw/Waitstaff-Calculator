@@ -1,15 +1,15 @@
 .panel-header {
-  padding: 1em;
+  padding: 1em 1em .5em;
 }
 .panel {
   padding: 1em 1em 0;
 }
 .panel-container {
-  margin-bottom: 2em;
+  margin-bottom: 1.5rem;
 }
 .panel-primary {
   @media only screen and (min-width: $medium-screen-up) {
-    height: 25em;
+    height: 31.9em;
     position: relative;
   }
 }
@@ -22,3 +22,31 @@
     padding: 0;
   }
 }
+
+.button-reset {
+  padding-bottom: 6em;
+}
+
+span.error {
+  font-size: .75em;
+  color: red;
+  font-style: italic;
+}
+.input-container {
+  padding-bottom: 1em;
+}
+
+div.result {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  border-radius: 0;
+  outline: none;
+  height: 1.75rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+

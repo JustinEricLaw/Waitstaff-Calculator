@@ -32,27 +32,33 @@
       
         <!-- Meal Details -->
         <section class="col s12 l6">
-          <div class="card panel-container white">
-            <div class="indigo panel-header">
+          <div class="panel-container white">
+            <div class="panel-header">
               <h6>Enter the Meal Details</h6>
             </div>
             <div class="panel panel-primary">
-              <form>
-                <div>
-                  <label for="price">Base Meal Price: $</label>
-                  <input type="number">
+              <form name="myForm" novalidate ng-submit="submit()">
+                <div class="input-container">
+                  <label for="price">Base Meal Price:</label>
+                  <input type="number" name="price" ng-model="meal_price" required>
+                  <span class="error" ng-if="myForm.$submitted && myForm.price.$error.required">Please Enter a Price Above</span>
+                  <span class="error" ng-if="myForm.$submitted && myForm.price.$error.number">Not a valid number!</span>
                 </div>
-                <div>
-                  <label for="tax">Tax Rate: %</label>
-                  <input type="number">
+                <div class="input-container">
+                  <label for="tax">Tax Rate %:</label>
+                  <input type="number" name="tax" ng-model="meal_tax" required>
+                  <span class="error" ng-if="myForm.$submitted && myForm.tax.$error.required">Please Enter a Tax Rate Above</span>
+                  <span class="error" ng-if="myForm.$submitted && myForm.tax.$error.number">Not a valid number!</span>
                 </div>
-                <div>
-                  <label for="tip">Tip Percentage: %</label>
-                  <input type="number">
+                <div class="input-container">
+                  <label for="tip">Tip Percentage %:</label>
+                  <input type="number" name="tip" ng-model="meal_tip" required>
+                  <span class="error" ng-if="myForm.$submitted && myForm.tip.$error.required">Please Enter a Tip Percentage Above</span>
+                  <span class="error" ng-if="myForm.$submitted && myForm.tip.$error.number">Not a valid number!</span>
                 </div>
                 <div class="button-container right-align">
-                  <a class="btn indigo" type="submit">Submit</a>
-                  <a class="btn blue" type="reset">Cancel</a>
+                  <input class="btn indigo" type="submit" value="Submit" />
+                  <input class="btn blue" type="reset" value="Cancel" />
                 </div>
               </form>
             </div>
@@ -62,22 +68,22 @@
 
         <!-- Customer Charges -->
         <section class="col s12 l6">
-          <div class="card panel-container white">
-            <div class="indigo panel-header">
+          <div class="panel-container white">
+            <div class="panel-header">
               <h6>Customer Charges</h6>
             </div>
             <div class="panel">
-              <div>
+              <div class="input-container">
                 <label for="subtotal">Subtotal:</label>
-                <input type="number">
+                <div class="result">{{customer_subtotal() | number: 2}}</div>
               </div>
-              <div>
+              <div class="input-container">
                 <label for="tip">Tip:</label>
-                <input type="number">
+                <div class="result">{{customer_tip() | number:2}}</div>
               </div>
-              <div>
+              <div class="input-container">
                 <label for="total">Total:</label>
-                <input type="number">
+                <div class="result">{{customer_total() | number: 2}}</div>
               </div>
             </div>
           </div>
@@ -86,29 +92,29 @@
 
         <!-- Earnings -->
         <section class="col s12 l6">
-          <div class="card panel-container white">
-            <div class="indigo panel-header">
+          <div class="panel-container white">
+            <div class="panel-header">
               <h6>Earnings Info</h6>
             </div>
             <div class="panel">
-              <div>
+              <div class="input-container">
                 <label for="tip-total">Tip Total:</label>
-                <input type="number">
+                <div class="result">{{tip_total}}</div>
               </div>
-              <div>
+              <div class="input-container">
                 <label for="meal-count">Meal Count:</label>
-                <input type="number">
+                <div class="result">{{meal_count}}</div>
               </div>
-              <div>
+              <div class="input-container">
                 <label for="avg-tip">Average Tip:</label>
-                <input type="number">
+                <div class="result">{{avg_tip}}</div>
               </div>
             </div>
           </div>
 
           <!-- Reset -->
-          <div class="right-align">
-            <a class="btn-large blue" type="reset">Reset</a>
+          <div class="button-reset right-align">
+            <a class="btn-large red accent-2" type="reset">Reset</a>
           </div>
 
         </section>
