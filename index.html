@@ -40,19 +40,19 @@
               <form name="myForm" novalidate ng-submit="submit()">
                 <div class="input-container">
                   <label for="price">Base Meal Price:</label>
-                  <input type="number" name="price" ng-model="meal_price" required>
+                  <input type="number" name="price" ng-model="meal.price" placeholder="$" required>
                   <span class="error" ng-if="myForm.$submitted && myForm.price.$error.required">Please Enter a Price Above</span>
                   <span class="error" ng-if="myForm.$submitted && myForm.price.$error.number">Not a valid number!</span>
                 </div>
                 <div class="input-container">
-                  <label for="tax">Tax Rate %:</label>
-                  <input type="number" name="tax" ng-model="meal_tax" required>
+                  <label for="tax">Tax Rate:</label>
+                  <input type="number" name="tax" ng-model="meal.tax" placeholder="%" required>
                   <span class="error" ng-if="myForm.$submitted && myForm.tax.$error.required">Please Enter a Tax Rate Above</span>
                   <span class="error" ng-if="myForm.$submitted && myForm.tax.$error.number">Not a valid number!</span>
                 </div>
                 <div class="input-container">
-                  <label for="tip">Tip Percentage %:</label>
-                  <input type="number" name="tip" ng-model="meal_tip" required>
+                  <label for="tip">Tip Percentage:</label>
+                  <input type="number" name="tip" ng-model="meal.tip" placeholder="%" required>
                   <span class="error" ng-if="myForm.$submitted && myForm.tip.$error.required">Please Enter a Tip Percentage Above</span>
                   <span class="error" ng-if="myForm.$submitted && myForm.tip.$error.number">Not a valid number!</span>
                 </div>
@@ -75,15 +75,15 @@
             <div class="panel">
               <div class="input-container">
                 <label for="subtotal">Subtotal:</label>
-                <div class="result">{{customer_subtotal() | number: 2}}</div>
+                <div class="result">{{customer.subtotal | currency:"$"}}</div>
               </div>
               <div class="input-container">
                 <label for="tip">Tip:</label>
-                <div class="result">{{customer_tip() | number:2}}</div>
+                <div class="result">{{customer.tip | currency:"$"}}</div>
               </div>
               <div class="input-container">
                 <label for="total">Total:</label>
-                <div class="result">{{customer_total() | number: 2}}</div>
+                <div class="result">{{customer.total | currency:"$"}}</div>
               </div>
             </div>
           </div>
@@ -99,29 +99,26 @@
             <div class="panel">
               <div class="input-container">
                 <label for="tip-total">Tip Total:</label>
-                <div class="result">{{tip_total}}</div>
+                <div class="result">{{earnings.total | currency:"$"}}</div>
               </div>
               <div class="input-container">
                 <label for="meal-count">Meal Count:</label>
-                <div class="result">{{meal_count}}</div>
+                <div class="result">{{earnings.count | number}}</div>
               </div>
               <div class="input-container">
                 <label for="avg-tip">Average Tip:</label>
-                <div class="result">{{avg_tip}}</div>
+                <div class="result">{{earnings.avg | currency:"$"}}</div>
               </div>
             </div>
           </div>
 
           <!-- Reset -->
           <div class="button-reset right-align">
-            <a class="btn-large red accent-2" type="reset">Reset</a>
+            <input class="btn-large red accent-2" type="reset" ng-click="resetAll()" value="reset"/>
           </div>
-
         </section>
 
 
-
-      
       </div> <!-- Close Row -->
     </div> <!-- Close Container -->
   </body>

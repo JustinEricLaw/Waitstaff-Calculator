@@ -49,4 +49,8 @@ div.result {
   padding: 0;
 }
 
-
+// Placeholder Effect on Blur
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.15s 0.15s ease; 
+  opacity: 0;
+}
