@@ -18,10 +18,20 @@ angular.module('myApp', [])
         $scope.earnings.total = $scope.customer.tip + ($scope.earnings.total || 0);
         $scope.earnings.count = ++$scope.earnings.count || 1;
         $scope.earnings.avg = $scope.earnings.total / $scope.earnings.count;
-
+        
+        // Why Doesn't this work?
+        // $scope.earnings.total += $scope.customer.tip;
+        // $scope.earnings.count++;
+        // $scope.earnings.avg = $scope.earnings.total / $scope.earnings.count;
       }
     };
 
+    // Clear Meal Details
+    $scope.clear = function () {
+      $scope.meal = {};
+      $scope.customer = {};
+      $scope.myForm.$setPristine();
+    };
 
     // Reset All Data
     $scope.resetAll = function () {
