@@ -1,0 +1,27 @@
+<!-- Earnings -->
+        <section class="col s12 l6">
+          <div class="panel-container white">
+            <div class="panel-header">
+              <h6>Earnings Info</h6>
+            </div>
+            <div class="panel">
+              <div class="input-container">
+                <label for="tip-total">Tip Total:</label>
+                <div class="result">{{earnings.total | currency:"$"}}</div>
+              </div>
+              <div class="input-container">
+                <label for="meal-count">Meal Count:</label>
+                <div class="result">{{earnings.count | number}}</div>
+              </div>
+              <div class="input-container">
+                <label for="avg-tip">Average Tip:</label>
+                <div class="result">{{earnings.avg | currency:"$"}}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset -->
+          <div class="button-reset right-align">
+            <input class="btn-large red accent-2" type="reset" ng-click="resetAll()" value="reset"/>
+          </div>
+        </section>

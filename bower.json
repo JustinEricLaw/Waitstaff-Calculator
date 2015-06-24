@@ -1,0 +1,20 @@
+{
+  "name": "Waitstaff-Calculator-v1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/JustinEricLaw/Waitstaff-Calculator",
+  "authors": [
+    "J Law <justin.eric.law@gmail.com>"
+  ],
+  "license": "none",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "angular-route": "~1.4.1"
+  }
+}

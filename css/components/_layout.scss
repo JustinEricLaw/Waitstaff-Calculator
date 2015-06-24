@@ -1,3 +1,26 @@
+.header-wrap {
+  margin: 1.75rem 0;
+}
+
+.nav-wrapper li {
+  display: inline-block;
+  padding: 0 .75em;
+  border-right: 1px solid #fff;
+  line-height: 1;
+  :hover {
+    color: #3d5afe;
+  }
+}
+li.last-li {
+  border-right: none;
+}
+.nav-wrapper a {
+  color: white;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 .panel-header {
   padding: 1em 1em .5em;
 }
