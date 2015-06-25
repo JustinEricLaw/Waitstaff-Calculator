@@ -1,5 +1,24 @@
 .header-wrap {
-  margin: 1.75rem 0;
+  margin: 2rem 0 3rem;
+}
+
+.home-wrap {
+  margin: 0 auto;
+  padding: .5em;
+  border-radius: 5px;
+  max-width: 40.625em; // 650px
+}
+.row {
+  max-width: 40.625em; // 650px
+  margin: 0 auto;
+}
+
+
+.home-info {
+  padding: 0 0 1em;
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1.75;
 }
 
 .nav-wrapper li {
@@ -29,25 +48,12 @@ li.last-li {
 }
 .panel-container {
   margin-bottom: 1.5rem;
-}
-.panel-primary {
-  @media only screen and (min-width: $medium-screen-up) {
-    height: 31.9em;
-    position: relative;
-  }
-}
-.button-container {
-  padding: 1.5em 0; 
-  @media only screen and (min-width: $medium-screen-up) {
-    position: absolute;
-    bottom: 1em;
-    right: 1em; 
-    padding: 0;
-  }
+  border-radius: 5px;
 }
 
+.button-container,
 .button-reset {
-  padding-bottom: 6em;
+  padding: 1.5em 0;
 }
 
 span.error {

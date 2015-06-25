@@ -1,5 +1,5 @@
 <!-- Earnings -->
-        <section class="col s12 l6">
+        <section class="col s12">
           <div class="panel-container white">
             <div class="panel-header">
               <h6>Earnings Info</h6>
@@ -17,11 +17,10 @@
                 <label for="avg-tip">Average Tip:</label>
                 <div class="result">{{earnings.avg | currency:"$"}}</div>
               </div>
+              <!-- Reset -->
+              <div class="button-reset right-align">
+                <input class="btn red accent-2" type="reset" ng-click="resetAll()" value="reset"/>
+              </div>
             </div>
-          </div>
-
-          <!-- Reset -->
-          <div class="button-reset right-align">
-            <input class="btn-large red accent-2" type="reset" ng-click="resetAll()" value="reset"/>
           </div>
         </section>

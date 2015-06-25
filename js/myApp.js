@@ -1,4 +1,21 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngRoute'])
+  
+  // Config to set Routes
+  .config(['$routeProvider', function($routeProvider){
+    $routeProvider.when('/', {
+      templateUrl : 'home.html',
+      controller : 'myController'
+    }).when('/new-meal', {
+      templateUrl : 'meal.html',
+      controller : 'myController'
+    }).when('/earnings', {
+      templateUrl : 'earnings.html',
+      controller : 'myController'
+    }).otherwise('/');
+  }])
+
+
+  // The Controller
   .controller('myController', ['$scope', function($scope){
 
     $scope.meal = {};

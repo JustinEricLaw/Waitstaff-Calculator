@@ -7,12 +7,8 @@
     <!-- Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Fonts -->
-
-    
     <!-- Main CSS Stylesheet -->  
     <link rel="stylesheet" href="css/style.css" />
-
   </head>
 
 
@@ -23,9 +19,9 @@
         <nav>
           <div class="nav-wrapper">
             <ul id="nav-mobile" class="center">
-              <li><a href="#">Home</a></li><!--
-              --><li><a href="#">New Meal</a></li><!--
-              --><li class="last-li"><a href="#">Earnings</a></li> 
+              <li><a href="#/">Home</a></li><!--
+              --><li><a href="#/new-meal">New Meal</a></li><!--
+              --><li class="last-li"><a href="#/earnings">Earnings</a></li> 
             </ul>
           </div>
         </nav>
@@ -33,7 +29,9 @@
 
 
       <div class="row">
-
+        <div ng-view>
+          
+        </div>
       </div> <!-- Close Row -->
     </div> <!-- Close Container -->
 
